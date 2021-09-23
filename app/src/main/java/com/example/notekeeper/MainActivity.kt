@@ -2,7 +2,10 @@ package com.example.notekeeper
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+<<<<<<< HEAD
+=======
 import androidx.navigation.ui.AppBarConfiguration
+>>>>>>> 4fae139b0b540b49a2b17d23c419a72ed4bdbfa2
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
@@ -27,6 +30,23 @@ class MainActivity : AppCompatActivity() {
 
         binding.spinnerCourses.adapter = adapterCourses
 
+<<<<<<< HEAD
+        notePosition = savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET) ?:
+            intent.getIntExtra(NOTE_POSITION, POSITION_NOT_SET)
+
+            if(notePosition != POSITION_NOT_SET)
+                displayNote()
+            else{
+                DataManager.notes.add(NoteInfo())
+                notePosition = DataManager.notes.lastIndex
+            }
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(NOTE_POSITION, notePosition)
+=======
         notePosition = intent.getIntExtra(EXTRA_NOTE_POSITION, POSITION_NOT_SET)
 
             if(notePosition != POSITION_NOT_SET)
@@ -34,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+>>>>>>> 4fae139b0b540b49a2b17d23c419a72ed4bdbfa2
     }
 
     private fun displayNote() {
@@ -57,9 +78,47 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
+<<<<<<< HEAD
+            R.id.action_next ->{
+                moveNext()
+                true
+            }
+=======
+>>>>>>> 4fae139b0b540b49a2b17d23c419a72ed4bdbfa2
             else -> super.onOptionsItemSelected(item)
         }
     }
 
+<<<<<<< HEAD
+    private fun moveNext() {
+        ++notePosition
+        displayNote()
+        invalidateOptionsMenu()
+    }
 
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        if(notePosition >= DataManager.notes.lastIndex){
+            val menuItem = menu?.findItem(R.id.action_next)
+            if(menuItem != null){
+                menuItem.icon = getDrawable(R.drawable.ic_block_white_24)
+                menuItem.isEnabled = false
+            }
+        }
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        saveNote()
+    }
+
+    private fun saveNote() {
+        val note = DataManager.notes[notePosition]
+        note.title = textNoteTitle.text.toString()
+        note.text = textNoteText.text.toString()
+        note.course = spinnerCourses.selectedItem as CourseInfo
+    }
+=======
+
+>>>>>>> 4fae139b0b540b49a2b17d23c419a72ed4bdbfa2
 }
