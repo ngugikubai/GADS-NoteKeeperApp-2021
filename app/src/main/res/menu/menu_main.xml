@@ -7,10 +7,13 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+<<<<<<< HEAD
     <item
         android:id="@+id/action_next"
         android:icon="@drawable/ic_forward_white_24"
         android:orderInCategory="101"
         android:title="Next"
         app:showAsAction="ifRoom|withText" />
+=======
+>>>>>>> 4fae139b0b540b49a2b17d23c419a72ed4bdbfa2
 </menu>

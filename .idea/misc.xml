@@ -7,7 +7,10 @@
         <entry key="..\:/Users/Brian/AndroidStudioProjects/NoteKeeper/app/src/main/res/layout/activity_note_list.xml" value="0.1" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/NoteKeeper/app/src/main/res/layout/content_main.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/NoteKeeper/app/src/main/res/layout/content_note_list.xml" value="0.15458937198067632" />
+<<<<<<< HEAD
         <entry key="..\:/Users/TRANSSION/AndroidStudioProjects/GADS-NoteKeeperApp-2021-master/app/src/main/res/menu/menu_main.xml" value="0.264" />
+=======
+>>>>>>> 4fae139b0b540b49a2b17d23c419a72ed4bdbfa2
       </map>
     </option>
   </component>
